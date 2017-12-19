@@ -1,0 +1,8 @@
+{
+  "name": "NRC",
+  "app_id": "21de3735",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
