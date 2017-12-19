@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search Result</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="search">
+
+  <ion-row>
+    <ion-col>
+      <p>From:</p>
+      <h3>{{search.start_station}}</h3>
+    </ion-col>
+    <ion-col>
+      <p>To:</p>
+      <h3>{{search.end_station}}</h3>
+    </ion-col>
+  </ion-row>
+  
+    <h5>Date: {{search.date}}</h5>
+    <!-- <h5>{{search.departure_time}} &mdash; {{search.arrival_time}}</h5> -->
+
+  <ion-row>
+    <ion-col>
+      <p>Passenger(s)</p>
+        <h5>{{search.passenger}}</h5>
+    </ion-col>
+    <ion-col>
+      <p>Class:</p>
+        <h5>N {{search.class}}</h5>
+    </ion-col>
+  </ion-row>
+
+  <hr>
+</div>
+</ion-content>

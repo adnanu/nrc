@@ -1,0 +1,78 @@
+<!-- <button ion-button clear (click)="toggleSearch()">
+  
+  <div class="beforeToggle">header </div>
+  
+  <div class="afterToggle" #cc>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quos velit
+    asperiores ad quasi sunt placeat. Illum, expedita quisquam in, quidem porro 
+    fugiat quas repellendus aliquam optio ut iusto sint.
+  </div>
+</button> -->
+<!-- < class="card-search"> -->
+<ion-card class="card-search"> 
+  <ion-card-header (click)="toggleSearch()">
+    <!-- <h1 style="color:white">BOOK YOUR JOURNEY</h1> -->
+    <h1 style="color:white">Where are you going to?</h1>
+    <ion-list no-lines >
+      <ion-item  >
+        <ion-label floating>From:</ion-label>
+        <ion-select (click)="toggleSearch()" [(ngModel)]="from">
+            <ion-option  *ngFor="let station of stations">{{ station.station_name }} - {{ station.station_city }}</ion-option>
+        </ion-select>
+        <!-- <ion-input type="text"  [(ngModel)]="from"></ion-input> -->
+      </ion-item>
+
+      <ion-fab end  (click)="toggleSearch()">
+          <button clear ion-fab id="swap" type="button" (click)="swap()"><ion-icon name="swap"></ion-icon>
+          </button>
+      </ion-fab>
+
+      <ion-item >
+        <ion-label floating>To:</ion-label>
+        <ion-select  (click)="toggleSearch()" [(ngModel)]="to">
+            <ion-option  *ngFor="let station of stations">{{ station.station_name }} - {{ station.station_city }}</ion-option>
+        </ion-select>
+        <!-- <ion-input type="text"  [(ngModel)]="to"></ion-input> -->
+      </ion-item>
+    </ion-list>
+  </ion-card-header>
+  
+  <ion-card-content #cc>
+
+  <ion-list>
+      <button (click)="close()" ion-button clear color="danger"><ion-icon name="close"></ion-icon></button>                    
+    <ion-item>
+      <ion-label stacked>Date</ion-label>
+      <ion-datetime [(ngModel)]="date" displayFormat="DDD D MMM,YY" min="2017" max="2100"></ion-datetime>      
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Passengers</ion-label>
+        <ion-input type="number" value="1" max="10"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Class</ion-label>
+      <ion-select [(ngModel)]="class">
+        <ion-option value="First Class" selected>First Class</ion-option>      
+        <ion-option value="Economy Class">Economy Class</ion-option>
+      </ion-select>
+    </ion-item>
+<!-- 
+    <ion-item>
+        <ion-label stacked>One-way Trip</ion-label>        
+        <ion-checkbox [(ngModel)]="oneway" (ionChange)="tripType()"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Return Trip</ion-label>        
+        <ion-checkbox [(ngModel)]="return" (ionChange)="tripType()"></ion-checkbox>
+    </ion-item> -->
+
+    <ion-item>
+        <button ion-button full (click)="searchBtn()">Search</button>        
+    </ion-item>
+  </ion-list>
+  </ion-card-content>
+</ion-card>
+<!-- </div> -->

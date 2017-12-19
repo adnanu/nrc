@@ -1,0 +1,45 @@
+search {
+    .card-search {
+        background-image: url('../assets/img/search.png') !important;
+        background-size: 185%;
+        // background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        text-align: center;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        width: 100% !important;
+        // height: 80% !important;
+    }
+    ion-fab {
+        margin-top: -30px;
+    }
+    ion-list {
+        // position: absolute;
+        top: 15%;
+        border-radius: 10px !important;
+        // left: 2%;
+        // font-size: 1.5em;
+        width: 100% !important;
+        // width: calc(100% - 1000px);
+        background: rgba(0,0,0,.5) !important;
+        line-height: 1.4;
+        margin: 0 auto 10px auto;
+        padding: 0 10px;
+        color: #fff; 
+        font-weight: normal;
+        display: table;
+    }
+    
+    .card-header {
+        // background-color: map-get($colors, primary);
+        // color: #fff;
+        color: red;
+    }
+    .card-content {
+        margin-top: 0px;
+        padding: 0px 16px;
+        max-height: 0px;
+        color: red;
+    }
+}

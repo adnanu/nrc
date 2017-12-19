@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reservation Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+    
+<ion-content padding>
+  
+  <div *ngIf="session">
+<!--     
+    <ion-row>
+      <ion-col>
+        <ion-label stacked color="primary">From</ion-label>
+        <h5>{{session.start_station}}</h5>
+      </ion-col>
+      <ion-col>
+        <ion-label stacked color="primary">To</ion-label>
+        <h5>{{session.end_station}}</h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label stacked color="primary">Date</ion-label>
+        <h5>{{date}}</h5>
+      </ion-col>
+      <ion-col>
+        <ion-label stacked color="primary">Number of Passengers</ion-label>
+        <h5>{{passengers}}</h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label stacked color="primary">Class</ion-label>
+        <h5>{{session.start_station}}</h5>
+      </ion-col>
+      <ion-col>
+        <ion-label stacked color="primary">Fare</ion-label>
+        <h5>{{session.end_station}}</h5>
+      </ion-col>
+    </ion-row> -->
+
+  <button ion-button block round color="secondary" (click)="payNow(session)">Pay Now</button>
+    
+</div>
+
+  
+  <!-- <ion-item>
+    <ion-input type="text" placeholder="QR Data 1" [(ngModel)]="qrData" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="QR Data 2" [(ngModel)]="qrData1" ></ion-input>
+  </ion-item> -->
+
+  <!-- <button ion-button block round icon-left (click)="generate()"><ion-icon name="barcode"></ion-icon>Generate</button> -->
+
+<!--   
+  <button ion-button block round color="danger" (click)="payNow()">Pay Now</button>
+  <button ion-button block round icon-left>Pay Later</button> -->
+
+
+</ion-content>

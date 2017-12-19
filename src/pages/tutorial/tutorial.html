@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/logo.png" class="slide-image"/>
+      <h2 class="slide-title">
+        Welcome to <b>NRC</b>
+      </h2>
+      <p>
+        The <b>Nigerian Railway Coperation</b> seat booking and reservation app that books and reserves your seat at your convinience.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/seats-tutorial.png" style="margin:0px 0px 15px 0px;max-width:100%;" class="slide-image"/>
+      <h2 class="slide-title">Easily reserve seats</h2>
+      <p><b>NRC</b> app provides a view of unoccupied and reserved seats so that passengers can chose their prefered seat location.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/pay-tutorial.png" style="margin:0px 0px 15px 0px;max-width:100%;" class="slide-image"/>
+      <h2 class="slide-title">Pay securely with Remita </h2>
+      <p>Use <b>Remita</b> with it's high security payment gateaway and easily generate QR Code reciepts.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/begin.png" class="slide-image"/>
+      <h2 class="slide-title">Let's begin?</h2>
+      <button ion-button icon-end large clear (click)="startApp()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

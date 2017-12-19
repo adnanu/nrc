@@ -1,0 +1,130 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Payment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <form #signupForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label stacked color="primary">Full Name</ion-label>
+				<ion-input [(ngModel)]="payerName" name="payerNameValid" type="text" #payerNameValid="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="payerNameValid.valid || submitted == false" color="danger" padding-left>
+				Full Name is required
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Email Address</ion-label>
+				<ion-input [(ngModel)]="payerEmail" name="emailValid" type="email" #emailValid="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="emailValid.valid || submitted == false" color="danger" padding-left>
+				Email Address is required
+			</p>
+
+			<ion-item>
+          <ion-label stacked color="primary">Phone Number</ion-label>
+          <ion-input [(ngModel)]="payerPhone" name="phoneValid" type="text" #phoneValid="ngModel" required>
+          </ion-input>
+			</ion-item>
+			<p ion-text [hidden]="phoneValid.valid || submitted == false" color="danger" padding-left>
+          Phone Number is required
+        </p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Amount</ion-label>
+				<ion-input [(ngModel)]="amt" name="amountValid" type="text" #amountValid="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="amountValid.valid || submitted == false" color="danger" padding-left>
+				Amount is required
+			</p>
+
+			<ion-item>
+        <ion-label stacked color="primary">Payment Type</ion-label>
+        <ion-select [(ngModel)]="paymenttype" id="paymenttype" name="paymentTypeValid" #paymentTypeValid="ngModel" required>
+          <!-- <ion-option> Select Payment Type </ion-option> -->
+          <ion-option value="VERVE"> Verve Card</ion-option>
+          <ion-option value="VISA"> Visa</ion-option>
+          <ion-option value="MASTERCARD"> MasterCard</ion-option>
+          <ion-option value="POCKETMONI"> PocketMoni</ion-option>
+          <ion-option value="POS"> POS</ion-option>
+          <ion-option value="ATM"> ATM</ion-option>
+          <ion-option value="BANK_BRANCH">BANK BRANCH</ion-option>
+          <ion-option value="BANK_INTERNET">BANK INTERNET</ion-option>
+          <ion-option value="REMITA_PAY"> Remita Account Transfer</ion-option>   
+        </ion-select>
+			</ion-item>
+			<p ion-text [hidden]="paymentTypeValid.valid || submitted == false" color="danger" padding-left>
+				Payment Type is required
+			</p>
+		</ion-list>
+
+		<div padding>
+			<button ion-button (click)="onPayment()" type="submit" block>Pay via Remita</button>
+		</div>
+	</form>
+
+<!-- 
+    <form action="http://www.remitademo.net/remita/ecomm/init.reg" name="SubmitRemitaForm" method="POST">
+      <input name="merchantId" value="1509328648353" type="hidden">
+      <input name="serviceTypeId" value="1509328543428" type="hidden">
+      <input name="orderId" value="8792" type="hidden">
+      <input name="hash" value="ABCED12D3E1476DEFA12" type="hidden">
+      <input name="payerName" value="Customer Name" type="hidden">
+      <input name="payerEmail" value="customer_email@email.com" type="hidden">
+      <input name="payerPhone" value="080211111111" type="hidden">
+      <input name="amt" value="7000" type="hidden">
+      <input name="responseurl" value="http://www.yourwebsite.com/response.php" type="hidden">
+      <input type ="submit" name="submit_btn" value="Pay Via Remita">
+    </form> -->
+  
+    <img src="assets/remita-payment-logo-horizonal.png" alt="">
+    
+
+  <!-- <ion-list>
+    <ion-item *ngIf="createdCode">
+      <div item-start>
+        <h2>Date {{ qrData }}</h2>
+        <h3>Location {{ qrData1 }}</h3>
+        <p>Time {{ createdCode }}</p>
+      </div>
+
+      <h1 text-center>-></h1>
+
+      <div item-end>
+        <h2>Date {{ qrData }}</h2>
+        <h3>Location {{ qrData1 }}</h3>
+        <p>Time {{ createdCode }}</p>
+      </div>
+    </ion-item>
+
+    <ion-item *ngIf="createdCode">
+        <h2>Status {{ qrData }}</h2>
+        <h2>Seats {{ qrData1 }}</h2>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="createdCode" padding>
+    <h1>Scan this code for ticket invoice</h1>
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    <p> Value: {{ createdCode }}</p>
+  </ion-card> -->
+
+  <!-- <button ion-button block color="secondary" round icon-left (click)="remindMe()">
+    <ion-icon name="alarm"></ion-icon> Reminder
+  </button>  -->
+<!-- 
+  <button ion-button block color="light" round icon-left>
+    <ion-icon name="logo-uber"></ion-icon> Book An Uber To the Train Station
+  </button>  -->
+
+</ion-content>

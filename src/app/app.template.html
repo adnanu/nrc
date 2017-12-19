@@ -1,0 +1,64 @@
+
+  <!-- logged out menu -->
+<ion-menu [content]="content" id="loggedOutMenu" class="style-menu-material">
+    <ion-content>
+      <div class="menu-header">
+        <!--material-design-background-->
+        <!-- <img class="user-avatar round" [src]="chosenPicture || placeholder" onerror="this.src='assets/img/avatar/girl-avatar.png'" /> -->
+        <img class="user-avatar round" src="../assets/img/speakers/bear.jpg" />
+        <p class="name">Paula Bolliger</p>
+        <p class="e-mail">pbolliger@email.com</p>
+      </div>
+      <ion-list no-lines>
+        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+          {{p.title}}
+        </button>
+        <hr>
+         <button ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">
+          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+          {{p.title}}
+        </button>
+        <hr>
+        <button ion-item menuClose (click)="openTutorial()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Show Tutorial
+        </button>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- logged in menu -->
+  <ion-menu [content]="content" id="loggedInMenu" class="style-menu-material">
+      <ion-content>
+        <div class="menu-header">
+          <!--material-design-background-->
+          <!-- <img class="user-avatar round" [src]="chosenPicture || placeholder" onerror="this.src='assets/img/avatar/girl-avatar.png'" /> -->
+          <img class="user-avatar round" src="../assets/img/speakers/bear.jpg" />        
+          <p class="name">Paula Bolliger</p>
+          <p class="e-mail">pbolliger@email.com</p>
+        </div>
+        <ion-list no-lines>
+          <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+            <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+            {{p.title}}
+          </button>
+          <hr>
+           <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
+            <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+            {{p.title}}
+          </button>
+          <hr>
+          <button ion-item menuClose (click)="openTutorial()">
+            <ion-icon item-start name="hammer"></ion-icon>
+            Show Tutorial
+          </button>
+  
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+  <!-- main navigation -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>
+

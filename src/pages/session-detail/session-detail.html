@@ -1,0 +1,403 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="session">{{session.start_station}} to {{session.end_station}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="session">
+
+    <ion-card>
+        <h3>{{session.start_station}}</h3>      
+    </ion-card>
+
+    <ion-row>
+      <ion-col>
+        <p>From:</p>
+        <h3>{{session.start_station}}</h3>
+        <!-- <ion-input value="{{session.start_station}}" [(ngModel)]="start_station"  type="text">
+				</ion-input> -->
+      </ion-col>
+      <ion-col>
+        <p>To:</p>
+        <h3>{{session.end_station}}</h3>
+      </ion-col>
+    </ion-row>
+  
+    <h5>Duration: {{session.duration}} hours</h5>
+    <h5>{{session.departure_time}} &mdash; {{session.arrival_time}}</h5>
+
+
+    <ion-row>
+      <ion-col>
+        <p>Class A Fare:</p>
+          <h5>N {{session.class_a_fare}}</h5>
+      </ion-col>
+      <ion-col>
+        <p>Class B Fare:</p>
+          <h5>N {{session.class_b_fare}}</h5>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col>
+        <p>Class B Fare(Adult):</p>
+          <h5>N {{session.class_b_fare}}</h5>
+      </ion-col>
+      <ion-col>
+        <p>Class B Fare(Child):</p>
+        <h5>N {{session.class_b_child}}</h5>
+      </ion-col>
+    </ion-row> -->
+
+  <hr>
+  <!-- <h5>No. of Passengers:</h5> -->
+    <ion-row>
+      <ion-col>
+        <ion-label stacked>Select Train Class</ion-label>
+        <ion-select [(ngModel)]="class" class="select">
+          <ion-option value="First Class" selected>First Class</ion-option>      
+          <ion-option value="Economy Class">Economy Class</ion-option>
+        </ion-select>
+      </ion-col>
+      <ion-col>
+        <ion-label stacked>Date</ion-label>
+        <ion-datetime [(ngModel)]="date" displayFormat="DDD D MMM,YY" min="2017" max="2100"></ion-datetime>
+      </ion-col>
+
+    </ion-row>
+  <!-- <ion-row>
+    <ion-col>
+      <p>Class A:</p>
+      <ion-input [(ngModel)]="classA" min="0" max="9" type="number"></ion-input>
+    </ion-col>
+    <ion-col>
+      <p>Class B:</p>
+      <ion-input [(ngModel)]="classB" min="0" max="9" type="number"></ion-input>      
+    </ion-col>
+  </ion-row> -->
+
+  <!-- <ion-row>
+    <ion-col>
+      <p>Class B (Adult):</p>
+      <ion-select class="select">
+        <ion-option value="0" selected>0</ion-option>      
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col>
+      <p>Class B Fare(Child):</p>
+      <ion-select class="select">
+        <ion-option value="0" selected>0</ion-option>      
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row> -->
+
+    <!-- <input class="form-control" type="date"> -->
+<!-- 
+    <ion-row>
+      <ion-col>
+        <ion-label stacked>Passengers(Adult)</ion-label>
+        <ion-input type="number" [(ngModel)]="passengersAdult"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-label stacked>Passengers(Child)</ion-label>
+        <ion-input type="number" [(ngModel)]="passengersChild"></ion-input>
+      </ion-col>
+    </ion-row> -->
+
+    <hr>
+    <div class="train">
+      <!-- <div class="cockpit">
+      </div>-->
+      <!-- <h1>Please select a seat</h1> -->
+
+      <div class="exit exit--front fuselage">
+        
+      </div>
+      <ol class="cabin fuselage">
+        <li class="row row--1">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="1A" id="1A" />
+              <label for="1A">1A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="1B" id="1B" />
+              <label for="1B">1B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="1C" id="1C" />
+              <label for="1C">1C</label>
+            </li>
+            <!-- <li class="seat">
+              <input type="checkbox" disabled id="1D" />
+              <label for="1D">Occupied</label>
+            </li> -->
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="1D" id="1D" />
+              <label for="1D">1D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="1E" id="1E" />
+              <label for="1E">1E</label>
+            </li>
+           
+          </ol>
+        </li>
+        <li class="row row--2">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="2A" id="2A" />
+              <label for="2A">2A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="2B" id="2B" />
+              <label for="2B">2B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="2C" id="2C" />
+              <label for="2C">2C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="2D" id="2D" />
+              <label for="2D">2D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="2E" id="2E" />
+              <label for="2E">2E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--3">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="3A" id="3A" />
+              <label for="3A">3A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="3B" id="3B" />
+              <label for="3B">3B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="3C" id="3C" />
+              <label for="3C">3C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="3D" id="3D" />
+              <label for="3D">3D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="3E" id="3E" />
+              <label for="3E">3E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--4">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="4A" id="4A" />
+              <label for="4A">4A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="4B" id="4B" />
+              <label for="4B">4B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="4C" id="4C" />
+              <label for="4C">4C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="4D" id="4D" />
+              <label for="4D">4D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="4E" id="4E" />
+              <label for="4E">4E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--5">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="5A" id="5A" />
+              <label for="5A">5A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="5B" id="5B" />
+              <label for="5B">5B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="5C" id="5C" />
+              <label for="5C">5C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="5D" id="5D" />
+              <label for="5D">5D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="5E" id="5E" />
+              <label for="5E">5E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--6">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="6A" id="6A" />
+              <label for="6A">6A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="6B" id="6B" />
+              <label for="6B">6B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="6C" id="6C" />
+              <label for="6C">6C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="6D" id="6D" />
+              <label for="6D">6D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="6E" id="6E" />
+              <label for="6E">6E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--7">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="7A" id="7A" />
+              <label for="7A">7A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="7B" id="7B" />
+              <label for="7B">7B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="7C" id="7C" />
+              <label for="7C">7C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="7D" id="7D" />
+              <label for="7D">7D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="7E" id="7E" />
+              <label for="7E">7E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--8">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="8A" id="8A" />
+              <label for="8A">8A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="8B" id="8B" />
+              <label for="8B">8B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="8C" id="8C" />
+              <label for="8C">8C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="8D" id="8D" />
+              <label for="8D">8D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="8E" id="8E" />
+              <label for="8E">8E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="9A" id="9A" />
+              <label for="9A">9A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="9B" id="9B" />
+              <label for="9B">9B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="9C" id="9C" />
+              <label for="9C">9C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="9D" id="9D" />
+              <label for="9D">9D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="9E" id="9E" />
+              <label for="9E">9E</label>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--10">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="10A" id="10A" />
+              <label for="10A">10A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="10B" id="10B" />
+              <label for="10B">10B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="10C" id="10C" />
+              <label for="10C">10C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="10D" id="10D" />
+              <label for="10D">10D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" name="seat[]" value="10E" id="10E" />
+              <label for="10E">10E</label>
+            </li>
+            
+          </ol>
+        </li>
+      </ol>
+      <div class="exit exit--back fuselage">
+        
+      </div>
+    </div>
+
+    
+    <!-- <button ion-button block (click)="bookSeat()">Book Seat</button> -->
+
+  </div>
+</ion-content>
+
+<ion-footer>
+    <button ion-button block (click)="bookSeat(session)">Book Seat</button>
+</ion-footer>

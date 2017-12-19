@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <search></search>
+
+    <ion-card class="pages-card" (click)="schedules()">
+        <img src="assets/img/711692.jpg" />
+        <h1 class="neader">Train Schedules</h1>
+    </ion-card>
+  
+    <ion-card class="pages-card" (click)="fare()">
+        <img src="assets/img/tickets.jpg" alt="Fare"/>
+        <div class="neader">Ticket Fare Guide</div>
+    </ion-card>
+  
+    <ion-card class="pages-card" (click)="seats()">
+        <img src="assets/img/seats.jpg" background-postion="bottom" alt="Seats"/>
+        <div class="neader">Seat Map</div>
+    </ion-card>
+  
+    <ion-card class="pages-card" (click)="pnr()">
+        <img src="assets/img/514565.jpg" alt="PNR"/>
+        <div class="neader">Check PNR Status</div>
+    </ion-card>
+  
+    <ion-card class="pages-card" (click)="about()">
+        <img src="assets/img/89285.jpg" alt="About"/>
+        <div class="neader">About</div>
+    </ion-card>
+  
+    <ion-card class="pages-card" (click)="support()">
+        <img src="assets/img/546898.jpg" alt="Feedback"/>
+        <div class="neader">Support</div>
+    </ion-card>
+    
+</ion-content>
+  
